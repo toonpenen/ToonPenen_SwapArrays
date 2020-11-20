@@ -10,17 +10,19 @@ namespace ConsoleApp4
     {
         public static void Main()
         {
-            int[] array1 = new int[] { 1, 2, 3, 4, 5, 6 };
-            int[] array2 = new int[] { 6, 5, 4, 3, 2, 1 };
-           
-           
-            while (array1.Length == array2.Length)
-            {
-                array1 = array2;
-                /*array1 = array2*/;
-            }
+            int[] list1 = new int[] { 1, 2, 3, 4, 5, 6 };
+            int[] list2 = new int[] { 6, 5, 4, 3, 2, 1 };
 
-            Console.WriteLine(array1, array2);
+            int temp;
+
+            for (int i = 0; i < list1.Length; i++)
+            {
+                temp = list1[i];
+                list1[i] = list2[i];
+                list2[i] = temp;
+
+                Console.WriteLine(list2, list1);
+            }
         }
     }
 }
